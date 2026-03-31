@@ -949,66 +949,99 @@
     <div class="demo-panel active" id="tab-creator">
       <div class="screens-row">
 
-        <!-- Screen 1: 首页意向列表 -->
+        <!-- Screen 1: 待确认列表 -->
         <div>
           <div class="screen-phone">
             <div class="screen-inner">
               <div class="phone-notch" style="top:0;"></div>
+              <!-- Header -->
               <div class="s-header">
                 <div class="s-header-row">
                   <div>
                     <div class="s-title">回响 · 待确认</div>
-                    <div class="s-subtitle">今日 5 条新意向识别</div>
+                    <div class="s-subtitle">今日 5 条待回复</div>
                   </div>
-                  <div style="background:#FFE4E6;color:#E11D48;border-radius:8px;padding:4px 8px;font-size:10px;font-weight:700;">5 条待处理</div>
+                  <!-- 批量同意按钮 -->
+                  <button onclick="this.textContent='✓ 已全部同意';this.style.background='#10B981';" style="background:var(--xhs-red);color:white;border:none;border-radius:8px;padding:5px 10px;font-size:10px;font-weight:700;cursor:pointer;transition:all 200ms;">全部同意</button>
                 </div>
               </div>
-              <div class="s-body">
-                <div class="s-card">
-                  <div class="s-intent-badge">高意向</div>
-                  <div class="s-user-row">
-                    <div class="s-avatar" style="background:linear-gradient(135deg,#FF6B8A,#E11D48);width:24px;height:24px;border-radius:50%;"></div>
-                    <div class="s-username">小柔同学</div>
-                    <div style="font-size:9px;color:#94A3B8;margin-left:auto;">1分钟前</div>
-                  </div>
-                  <div class="s-comment">「求求链接！！这款防晒哪买的」</div>
-                  <div class="s-product-match">
-                    <div class="s-prod-icon" style="background:#FFF1F2;">🧴</div>
-                    <div>
-                      <div class="s-prod-name">安热沙 UV 防晒霜</div>
-                      <div class="s-prod-earn">+¥12.6 预估佣金</div>
-                    </div>
-                    <div class="s-prod-right" style="display:flex;gap:4px;">
-                      <button class="s-btn-sm s-btn-confirm">确认</button>
-                      <button class="s-btn-sm s-btn-skip">跳过</button>
+              <div class="s-body" style="height:calc(100% - 68px);">
+
+                <!-- Card 1 -->
+                <div class="s-card" style="padding:10px;">
+                  <!-- 原评论 -->
+                  <div class="s-user-row" style="margin-bottom:5px;">
+                    <div class="s-avatar" style="background:linear-gradient(135deg,#FF6B8A,#E11D48);width:22px;height:22px;border-radius:50%;flex-shrink:0;"></div>
+                    <div style="flex:1;min-width:0;">
+                      <span style="font-size:9px;font-weight:700;color:#1E293B;">小柔同学</span>
+                      <span style="font-size:8px;color:#94A3B8;margin-left:4px;">1分钟前</span>
                     </div>
                   </div>
+                  <div style="font-size:10px;color:#475569;margin-bottom:7px;padding-left:26px;">「求求链接！！这款防晒哪买的」</div>
+                  <!-- 匹配商品 -->
+                  <div style="display:flex;gap:6px;align-items:center;background:#F8FAFC;border-radius:7px;padding:6px;margin-bottom:7px;">
+                    <div style="font-size:14px;">🧴</div>
+                    <div style="flex:1;min-width:0;">
+                      <div style="font-size:9px;font-weight:700;color:#1E293B;">安热沙 UV 防晒霜</div>
+                      <div style="font-size:9px;color:#10B981;font-weight:700;">预估佣金 ¥12.6</div>
+                    </div>
+                  </div>
+                  <!-- AI 预编辑评论 + 可点击编辑 -->
+                  <div style="font-size:8px;color:#94A3B8;margin-bottom:3px;display:flex;align-items:center;gap:4px;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2" width="10" height="10"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+                    AI 预编辑回复 · 点击可修改
+                  </div>
+                  <div id="reply-preview-1" onclick="document.getElementById('reply-edit-1').style.display='block';this.style.display='none';" style="font-size:10px;color:#334155;background:#FFF8F9;border:1px dashed #FFB3C1;border-radius:7px;padding:7px;cursor:pointer;line-height:1.5;">
+                    我买的是这款哈~ 同款链接：<span style="color:#E11D48;text-decoration:underline;">安热沙UV水凝防晒霜</span> ☀️
+                  </div>
+                  <div id="reply-edit-1" style="display:none;">
+                    <textarea style="width:100%;font-size:10px;border:1px solid #E11D48;border-radius:7px;padding:7px;resize:none;outline:none;color:#334155;line-height:1.5;font-family:inherit;" rows="3">我买的是这款哈~ 同款链接：安热沙UV水凝防晒霜 ☀️</textarea>
+                    <div style="display:flex;gap:4px;margin-top:4px;justify-content:flex-end;">
+                      <button onclick="document.getElementById('reply-edit-1').style.display='none';document.getElementById('reply-preview-1').style.display='block';" style="font-size:9px;padding:3px 8px;border-radius:5px;border:1px solid #E2E8F0;background:white;cursor:pointer;color:#64748B;">取消</button>
+                      <button onclick="document.getElementById('reply-edit-1').style.display='none';document.getElementById('reply-preview-1').style.display='block';document.getElementById('reply-preview-1').innerHTML=document.getElementById('reply-edit-1').querySelector('textarea').value.replace('安热沙UV水凝防晒霜','<span style=color:#E11D48;text-decoration:underline>安热沙UV水凝防晒霜</span>');" style="font-size:9px;padding:3px 8px;border-radius:5px;border:none;background:var(--xhs-red);color:white;cursor:pointer;">保存</button>
+                    </div>
+                  </div>
+                  <button style="width:100%;margin-top:7px;padding:7px;background:var(--xhs-red);color:white;border:none;border-radius:7px;font-size:10px;font-weight:700;cursor:pointer;" onclick="this.textContent='✓ 已确认';this.style.background='#10B981';">确认发布</button>
                 </div>
 
-                <div class="s-card">
-                  <div class="s-intent-badge" style="background:#2563EB;">中意向</div>
-                  <div class="s-user-row">
-                    <div class="s-avatar" style="background:linear-gradient(135deg,#60A5FA,#2563EB);width:24px;height:24px;border-radius:50%;"></div>
-                    <div class="s-username">Kira_beauty</div>
-                    <div style="font-size:9px;color:#94A3B8;margin-left:auto;">5分钟前</div>
-                  </div>
-                  <div class="s-comment">「哪里能买到你用的那个口红颜色？」</div>
-                  <div class="s-product-match">
-                    <div class="s-prod-icon" style="background:#FFF1F2;">💄</div>
-                    <div>
-                      <div class="s-prod-name">YSL 口红 216</div>
-                      <div class="s-prod-earn">+¥8.4 预估佣金</div>
-                    </div>
-                    <div class="s-prod-right" style="display:flex;gap:4px;">
-                      <button class="s-btn-sm s-btn-confirm">确认</button>
-                      <button class="s-btn-sm s-btn-skip">跳过</button>
+                <!-- Card 2 -->
+                <div class="s-card" style="padding:10px;">
+                  <div class="s-user-row" style="margin-bottom:5px;">
+                    <div class="s-avatar" style="background:linear-gradient(135deg,#60A5FA,#2563EB);width:22px;height:22px;border-radius:50%;flex-shrink:0;"></div>
+                    <div style="flex:1;min-width:0;">
+                      <span style="font-size:9px;font-weight:700;color:#1E293B;">Kira_beauty</span>
+                      <span style="font-size:8px;color:#94A3B8;margin-left:4px;">5分钟前</span>
                     </div>
                   </div>
+                  <div style="font-size:10px;color:#475569;margin-bottom:7px;padding-left:26px;">「哪里能买到你用的那个口红颜色？」</div>
+                  <div style="display:flex;gap:6px;align-items:center;background:#F8FAFC;border-radius:7px;padding:6px;margin-bottom:7px;">
+                    <div style="font-size:14px;">💄</div>
+                    <div style="flex:1;min-width:0;">
+                      <div style="font-size:9px;font-weight:700;color:#1E293B;">YSL 口红 216 奶茶玫瑰</div>
+                      <div style="font-size:9px;color:#10B981;font-weight:700;">预估佣金 ¥8.4</div>
+                    </div>
+                  </div>
+                  <div style="font-size:8px;color:#94A3B8;margin-bottom:3px;display:flex;align-items:center;gap:4px;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2" width="10" height="10"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+                    AI 预编辑回复 · 点击可修改
+                  </div>
+                  <div id="reply-preview-2" onclick="document.getElementById('reply-edit-2').style.display='block';this.style.display='none';" style="font-size:10px;color:#334155;background:#FFF8F9;border:1px dashed #FFB3C1;border-radius:7px;padding:7px;cursor:pointer;line-height:1.5;">
+                    就是这支！颜色巨显白：<span style="color:#E11D48;text-decoration:underline;">YSL 口红 216</span> 💄
+                  </div>
+                  <div id="reply-edit-2" style="display:none;">
+                    <textarea style="width:100%;font-size:10px;border:1px solid #E11D48;border-radius:7px;padding:7px;resize:none;outline:none;color:#334155;line-height:1.5;font-family:inherit;" rows="3">就是这支！颜色巨显白：YSL 口红 216 💄</textarea>
+                    <div style="display:flex;gap:4px;margin-top:4px;justify-content:flex-end;">
+                      <button onclick="document.getElementById('reply-edit-2').style.display='none';document.getElementById('reply-preview-2').style.display='block';" style="font-size:9px;padding:3px 8px;border-radius:5px;border:1px solid #E2E8F0;background:white;cursor:pointer;color:#64748B;">取消</button>
+                      <button onclick="document.getElementById('reply-edit-2').style.display='none';document.getElementById('reply-preview-2').style.display='block';" style="font-size:9px;padding:3px 8px;border-radius:5px;border:none;background:var(--xhs-red);color:white;cursor:pointer;">保存</button>
+                    </div>
+                  </div>
+                  <button style="width:100%;margin-top:7px;padding:7px;background:var(--xhs-red);color:white;border:none;border-radius:7px;font-size:10px;font-weight:700;cursor:pointer;" onclick="this.textContent='✓ 已确认';this.style.background='#10B981';">确认发布</button>
                 </div>
+
               </div>
             </div>
           </div>
-          <div class="screen-label">意向识别列表</div>
+          <div class="screen-label">待确认列表（含 AI 预编辑回复）</div>
         </div>
 
         <!-- Screen 2: 收益总览 -->
@@ -1374,26 +1407,14 @@
                 </div>
                 <div style="background:#F1F5F9;border-radius:6px;height:60px;display:flex;align-items:center;justify-content:center;color:#CBD5E1;font-size:9px;">封面图</div>
 
-                <!-- 笔记挂车区域 -->
+                <!-- 笔记挂车区域：只挂一个商品卡片 -->
                 <div style="margin-top:8px;border-top:1px solid #F1F5F9;padding-top:8px;">
                   <div style="font-size:9px;color:#94A3B8;margin-bottom:6px;">商品推荐</div>
-
-                  <!-- 商品卡片 1 -->
-                  <div style="display:flex;gap:8px;align-items:center;background:#FAFAFA;border:1px solid #F1F5F9;border-radius:8px;padding:7px;margin-bottom:5px;cursor:pointer;">
+                  <div style="display:flex;gap:8px;align-items:center;background:#FAFAFA;border:1px solid #F1F5F9;border-radius:8px;padding:7px;cursor:pointer;">
                     <div style="width:36px;height:36px;border-radius:6px;background:linear-gradient(135deg,#FFF1F2,#FFE4E6);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">🧴</div>
                     <div style="flex:1;min-width:0;">
                       <div style="font-size:9px;font-weight:700;color:#1E293B;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">安热沙 UV水凝防晒霜 50ml</div>
                       <div style="font-size:10px;font-weight:800;color:#E11D48;margin-top:1px;">¥158</div>
-                    </div>
-                    <div style="background:#E11D48;color:white;border-radius:5px;padding:3px 7px;font-size:8px;font-weight:700;flex-shrink:0;cursor:pointer;">购买</div>
-                  </div>
-
-                  <!-- 商品卡片 2 -->
-                  <div style="display:flex;gap:8px;align-items:center;background:#FAFAFA;border:1px solid #F1F5F9;border-radius:8px;padding:7px;cursor:pointer;">
-                    <div style="width:36px;height:36px;border-radius:6px;background:linear-gradient(135deg,#EFF6FF,#DBEAFE);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">🌞</div>
-                    <div style="flex:1;min-width:0;">
-                      <div style="font-size:9px;font-weight:700;color:#1E293B;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">安热沙 防晒喷雾 SPF50+</div>
-                      <div style="font-size:10px;font-weight:800;color:#E11D48;margin-top:1px;">¥128</div>
                     </div>
                     <div style="background:#E11D48;color:white;border-radius:5px;padding:3px 7px;font-size:8px;font-weight:700;flex-shrink:0;cursor:pointer;">购买</div>
                   </div>
@@ -1426,66 +1447,53 @@
           <div class="screen-label">形式二：笔记挂车</div>
         </div>
 
-        <!-- Screen 3: 区别对比说明 -->
-        <div>
-          <div class="screen-phone">
-            <div class="screen-inner" style="background:white;">
-              <div class="phone-notch" style="top:0;background:#0F0F0F;"></div>
-              <div style="padding:32px 14px 14px;">
-                <div style="font-size:13px;font-weight:800;color:#1E293B;margin-bottom:4px;">两种形式对比</div>
-                <div style="font-size:9px;color:#94A3B8;margin-bottom:14px;">根据原分享形式自动选择</div>
+        <!-- 两种形式对比说明：文字区域，不放在手机框里 -->
+        <div style="display:flex;flex-direction:column;justify-content:center;min-width:220px;max-width:280px;padding:8px 0;">
+          <div style="font-size:15px;font-weight:800;color:#1E293B;margin-bottom:6px;">两种形式对比</div>
+          <div style="font-size:13px;color:#94A3B8;margin-bottom:20px;">AI 根据原分享形式自动选择</div>
 
-                <!-- 形式一 -->
-                <div style="background:#FFF8F9;border:1px solid #FFE4E6;border-radius:10px;padding:10px;margin-bottom:8px;">
-                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
-                    <div style="width:20px;height:20px;background:#E11D48;border-radius:5px;display:flex;align-items:center;justify-content:center;">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" width="12" height="12"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                    </div>
-                    <div style="font-size:10px;font-weight:800;color:#E11D48;">评论区文字链</div>
-                  </div>
-                  <div style="font-size:9px;color:#475569;line-height:1.6;">
-                    触发条件：评论区有人求链接<br>
-                    回复形式：自然口吻 + 商品超链接<br>
-                    体验特点：融入对话，不突兀
-                  </div>
-                  <div style="margin-top:6px;background:white;border-radius:6px;padding:6px;font-size:9px;color:#334155;border:1px solid #F1F5F9;">
-                    「我买的是这款~ 同款链接：<span style="color:#E11D48;text-decoration:underline;">安热沙防晒霜</span> ☀️」
-                  </div>
-                </div>
-
-                <!-- 形式二 -->
-                <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:10px;padding:10px;margin-bottom:8px;">
-                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
-                    <div style="width:20px;height:20px;background:#2563EB;border-radius:5px;display:flex;align-items:center;justify-content:center;">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" width="12" height="12"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-                    </div>
-                    <div style="font-size:10px;font-weight:800;color:#2563EB;">笔记挂车</div>
-                  </div>
-                  <div style="font-size:9px;color:#475569;line-height:1.6;">
-                    触发条件：笔记评论区求链接多<br>
-                    回复形式：笔记下方挂商品卡片<br>
-                    体验特点：一次挂车，覆盖所有求链接
-                  </div>
-                  <div style="margin-top:6px;background:white;border-radius:6px;padding:5px;border:1px solid #E2E8F0;display:flex;gap:5px;align-items:center;">
-                    <div style="font-size:12px;">🧴</div>
-                    <div style="font-size:8px;font-weight:700;color:#1E293B;flex:1;">安热沙防晒霜</div>
-                    <div style="font-size:8px;color:#E11D48;font-weight:700;">¥158</div>
-                  </div>
-                </div>
-
-                <!-- 判断逻辑 -->
-                <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:10px;padding:10px;">
-                  <div style="font-size:10px;font-weight:800;color:#10B981;margin-bottom:4px;">AI 自动判断逻辑</div>
-                  <div style="font-size:9px;color:#065F46;line-height:1.7;">
-                    原分享是<b>评论</b> → 文字链回复<br>
-                    原分享是<b>笔记</b> + 求链接 &gt;3 条 → 笔记挂车<br>
-                    博主也可手动切换偏好形式
-                  </div>
-                </div>
+          <!-- 形式一 -->
+          <div style="background:#FFF8F9;border:1px solid #FFE4E6;border-radius:14px;padding:16px;margin-bottom:12px;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+              <div style="width:26px;height:26px;background:#E11D48;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" width="14" height="14"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               </div>
+              <div style="font-size:13px;font-weight:800;color:#E11D48;">评论区文字链</div>
+            </div>
+            <div style="font-size:12px;color:#475569;line-height:1.8;">
+              <b>触发：</b>有用户在评论区求链接<br>
+              <b>形式：</b>博主以自然口吻回复，内嵌商品文字链<br>
+              <b>特点：</b>融入对话语境，不干扰社区体验
+            </div>
+            <div style="margin-top:10px;background:white;border-radius:8px;padding:9px;font-size:12px;color:#334155;border:1px solid #F1F5F9;line-height:1.6;">
+              「我买的是这款哈~ 同款：<span style="color:#E11D48;text-decoration:underline;">安热沙UV防晒霜</span> ☀️」
             </div>
           </div>
-          <div class="screen-label">两种形式对比 & 判断逻辑</div>
+
+          <!-- 形式二 -->
+          <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:14px;padding:16px;margin-bottom:12px;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+              <div style="width:26px;height:26px;background:#2563EB;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" width="14" height="14"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </div>
+              <div style="font-size:13px;font-weight:800;color:#2563EB;">笔记挂车</div>
+            </div>
+            <div style="font-size:12px;color:#475569;line-height:1.8;">
+              <b>触发：</b>笔记下求链接评论积累较多<br>
+              <b>形式：</b>在笔记下方挂载商品卡片（一个）<br>
+              <b>特点：</b>一次挂车，覆盖所有求链接用户
+            </div>
+          </div>
+
+          <!-- 判断逻辑 -->
+          <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:14px;padding:14px;">
+            <div style="font-size:12px;font-weight:800;color:#10B981;margin-bottom:8px;">AI 自动判断逻辑</div>
+            <div style="font-size:12px;color:#065F46;line-height:1.9;">
+              原分享是 <b>评论</b> → 文字链回复<br>
+              原分享是 <b>笔记</b> + 求链接 &gt;3 条 → 笔记挂车<br>
+              博主可在设置中手动切换偏好形式
+            </div>
+          </div>
         </div>
 
       </div>
