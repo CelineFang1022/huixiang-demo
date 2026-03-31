@@ -1243,94 +1243,249 @@
 
     <!-- CONSUMER TAB -->
     <div class="demo-panel" id="tab-consumer">
+
+      <!-- 两种形式说明 -->
+      <div style="display:flex;gap:10px;margin-bottom:28px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:8px;padding:8px 16px;background:#FFF1F2;border:1px solid #FFE4E6;border-radius:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E11D48" stroke-width="2" width="16" height="16"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span style="font-size:13px;font-weight:700;color:#E11D48;">形式一：评论区文字回复</span>
+          <span style="font-size:12px;color:#94A3B8;">博主回复求链接的评论，带文字链</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;padding:8px 16px;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <span style="font-size:13px;font-weight:700;color:#2563EB;">形式二：笔记挂车</span>
+          <span style="font-size:12px;color:#94A3B8;">在原笔记下方直接挂载商品卡片</span>
+        </div>
+      </div>
+
       <div class="screens-row">
 
+        <!-- Screen 1: 评论区文字链回复 -->
         <div>
           <div class="screen-phone">
             <div class="screen-inner" style="background:#F8FAFC;">
               <div class="phone-notch" style="top:0;background:#0F0F0F;"></div>
-              <!-- XHS style post -->
-              <div style="background:white;padding:28px 12px 12px;">
-                <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
-                  <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#FF6B8A,#E11D48);"></div>
+              <div style="background:white;padding:28px 12px 10px;">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+                  <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#FF6B8A,#E11D48);"></div>
                   <div>
                     <div style="font-size:11px;font-weight:700;color:#1E293B;">晒晒小太阳🌸</div>
                     <div style="font-size:9px;color:#94A3B8;">美妆博主</div>
                   </div>
                 </div>
-                <div style="font-size:11px;color:#334155;line-height:1.6;margin-bottom:8px;">
-                  分享今夏必备防晒！用了两年的老朋友，真的不脱妆不泛白，骑车党亲测👍 素颜能直接涂这个出门
+                <div style="font-size:10px;color:#334155;line-height:1.6;margin-bottom:6px;">
+                  今夏必备防晒！不脱妆不泛白，骑车党亲测👍
                 </div>
-                <div style="background:#F1F5F9;border-radius:8px;height:80px;display:flex;align-items:center;justify-content:center;color:#94A3B8;font-size:10px;">笔记封面图</div>
+                <div style="background:#F1F5F9;border-radius:6px;height:60px;display:flex;align-items:center;justify-content:center;color:#CBD5E1;font-size:9px;">封面图</div>
               </div>
 
-              <div style="padding:10px;background:white;margin-top:4px;">
-                <div style="font-size:10px;font-weight:700;color:#1E293B;margin-bottom:8px;">热门评论</div>
+              <div style="padding:10px;background:white;margin-top:3px;">
+                <div style="font-size:10px;font-weight:700;color:#1E293B;margin-bottom:8px;">评论 (128)</div>
 
-                <!-- Regular comment -->
+                <!-- 用户求链接评论 -->
                 <div style="margin-bottom:10px;">
                   <div style="display:flex;gap:6px;align-items:flex-start;">
                     <div style="width:22px;height:22px;border-radius:50%;background:#E2E8F0;flex-shrink:0;"></div>
                     <div>
                       <div style="font-size:9px;font-weight:700;color:#1E293B;">travel_lisa</div>
-                      <div style="font-size:10px;color:#475569;">好看！请问什么牌子的？</div>
+                      <div style="font-size:10px;color:#475569;margin-top:1px;">求求链接！！这款防晒哪里买的</div>
+                      <div style="font-size:8px;color:#CBD5E1;margin-top:2px;">5分钟前</div>
                     </div>
                   </div>
                 </div>
 
-                <!-- AI reply -->
-                <div style="margin-bottom:10px;margin-left:10px;">
+                <!-- 博主文字链回复 -->
+                <div style="margin-bottom:8px;margin-left:12px;padding-left:8px;border-left:2px solid #F1F5F9;">
                   <div style="display:flex;gap:6px;align-items:flex-start;">
-                    <div style="width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#FF6B8A,#E11D48);flex-shrink:0;"></div>
+                    <div style="width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#FF6B8A,#E11D48);flex-shrink:0;"></div>
                     <div>
                       <div style="display:flex;align-items:center;gap:4px;margin-bottom:2px;">
-                        <div style="font-size:9px;font-weight:700;color:#E11D48;">晒晒小太阳🌸</div>
-                        <div style="background:#E11D48;color:white;border-radius:4px;padding:1px 4px;font-size:8px;font-weight:700;">博主</div>
+                        <span style="font-size:9px;font-weight:700;color:#E11D48;">晒晒小太阳🌸</span>
+                        <span style="background:#E11D48;color:white;border-radius:3px;padding:1px 4px;font-size:7px;font-weight:700;">博主</span>
                       </div>
-                      <div style="font-size:10px;color:#475569;">我买的是这款~ 这个同款可以看看👇</div>
-                      <div style="background:#FFF1F2;border:1px solid #FFE4E6;border-radius:8px;padding:8px;margin-top:6px;display:flex;gap:6px;align-items:center;cursor:pointer;">
-                        <div style="width:36px;height:36px;border-radius:6px;background:#FFE4E6;display:flex;align-items:center;justify-content:center;font-size:16px;">🧴</div>
-                        <div>
-                          <div style="font-size:9px;font-weight:700;color:#1E293B;">安热沙 UV 水凝防晒霜 50ml</div>
-                          <div style="font-size:10px;font-weight:800;color:#E11D48;margin-top:1px;">¥158</div>
-                        </div>
-                        <div style="margin-left:auto;background:#E11D48;color:white;border-radius:6px;padding:4px 8px;font-size:9px;font-weight:700;cursor:pointer;">去看看</div>
+                      <!-- 纯文字链接形式 -->
+                      <div style="font-size:10px;color:#334155;line-height:1.6;">
+                        我买的是这款哈~ 同款链接：<span style="color:#E11D48;text-decoration:underline;cursor:pointer;">安热沙UV水凝防晒霜</span> ☀️
                       </div>
-                      <div style="font-size:8px;color:#94A3B8;margin-top:3px;">由 回响 AI 辅助回复</div>
+                      <div style="font-size:8px;color:#CBD5E1;margin-top:2px;">刚刚 · 由 回响 AI 辅助</div>
                     </div>
                   </div>
                 </div>
 
+                <!-- 另一条普通评论 -->
+                <div style="margin-bottom:8px;">
+                  <div style="display:flex;gap:6px;align-items:flex-start;">
+                    <div style="width:22px;height:22px;border-radius:50%;background:#DBEAFE;flex-shrink:0;"></div>
+                    <div>
+                      <div style="font-size:9px;font-weight:700;color:#1E293B;">kira_beauty</div>
+                      <div style="font-size:10px;color:#475569;margin-top:1px;">已下单了！谢谢博主🥰</div>
+                      <div style="font-size:8px;color:#CBD5E1;margin-top:2px;">2分钟前</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 另一条求链接 -->
+                <div style="margin-bottom:8px;">
+                  <div style="display:flex;gap:6px;align-items:flex-start;">
+                    <div style="width:22px;height:22px;border-radius:50%;background:#D1FAE5;flex-shrink:0;"></div>
+                    <div>
+                      <div style="font-size:9px;font-weight:700;color:#1E293B;">小兔子跳跳</div>
+                      <div style="font-size:10px;color:#475569;margin-top:1px;">什么牌子的啊 哪里有卖</div>
+                      <div style="font-size:8px;color:#CBD5E1;margin-top:2px;">10分钟前</div>
+                    </div>
+                  </div>
+                </div>
+                <div style="margin-left:12px;padding-left:8px;border-left:2px solid #F1F5F9;">
+                  <div style="display:flex;gap:6px;align-items:flex-start;">
+                    <div style="width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#FF6B8A,#E11D48);flex-shrink:0;"></div>
+                    <div>
+                      <div style="display:flex;align-items:center;gap:4px;margin-bottom:2px;">
+                        <span style="font-size:9px;font-weight:700;color:#E11D48;">晒晒小太阳🌸</span>
+                        <span style="background:#E11D48;color:white;border-radius:3px;padding:1px 4px;font-size:7px;font-weight:700;">博主</span>
+                      </div>
+                      <div style="font-size:10px;color:#334155;line-height:1.6;">
+                        这个同款可以看看：<span style="color:#E11D48;text-decoration:underline;cursor:pointer;">安热沙防晒喷雾</span>，我平时出门就带这个💕
+                      </div>
+                      <div style="font-size:8px;color:#CBD5E1;margin-top:2px;">刚刚 · 由 回响 AI 辅助</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="screen-label">消费者看到的评论区</div>
+          <div class="screen-label">形式一：评论区文字链回复</div>
         </div>
 
+        <!-- Screen 2: 笔记挂车形式 -->
         <div>
           <div class="screen-phone">
             <div class="screen-inner" style="background:#F8FAFC;">
               <div class="phone-notch" style="top:0;background:#0F0F0F;"></div>
-              <div style="background:white;padding:28px 12px 12px;">
-                <div style="font-size:14px;font-weight:800;color:#1E293B;margin-bottom:2px;">商品详情</div>
-                <div style="font-size:10px;color:#94A3B8;">由种草博主推荐 · 点击跳转</div>
-              </div>
-              <div style="padding:10px;">
-                <div style="background:white;border-radius:12px;padding:12px;margin-bottom:8px;border:1px solid #F1F5F9;">
-                  <div style="width:100%;height:100px;background:linear-gradient(135deg,#FFF1F2,#FFE4E6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:40px;margin-bottom:10px;">🧴</div>
-                  <div style="font-size:12px;font-weight:700;color:#1E293B;">安热沙 UV 水凝防晒霜 SPF50+ PA++++</div>
-                  <div style="font-size:14px;font-weight:900;color:#E11D48;margin:6px 0;font-family:'Rubik',sans-serif;">¥158</div>
-                  <div style="font-size:9px;color:#64748B;margin-bottom:10px;">50ml · 亚马逊热销款 · 月销 12w+</div>
-                  <button style="width:100%;padding:10px;background:var(--xhs-red);color:white;border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;">立即购买</button>
+              <div style="background:white;padding:28px 12px 10px;">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+                  <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#FF6B8A,#E11D48);"></div>
+                  <div>
+                    <div style="font-size:11px;font-weight:700;color:#1E293B;">晒晒小太阳🌸</div>
+                    <div style="font-size:9px;color:#94A3B8;">美妆博主</div>
+                  </div>
                 </div>
-                <div style="background:#FFFBEB;border-radius:10px;padding:10px;border:1px solid #FDE68A;">
-                  <div style="font-size:10px;font-weight:700;color:#D97706;margin-bottom:4px;">来自博主的种草</div>
-                  <div style="font-size:10px;color:#92400E;">晒晒小太阳🌸 亲测好用，骑车党必备，不脱妆不泛白</div>
+                <div style="font-size:10px;color:#334155;line-height:1.6;margin-bottom:6px;">
+                  今夏必备防晒！不脱妆不泛白，骑车党亲测👍
+                </div>
+                <div style="background:#F1F5F9;border-radius:6px;height:60px;display:flex;align-items:center;justify-content:center;color:#CBD5E1;font-size:9px;">封面图</div>
+
+                <!-- 笔记挂车区域 -->
+                <div style="margin-top:8px;border-top:1px solid #F1F5F9;padding-top:8px;">
+                  <div style="font-size:9px;color:#94A3B8;margin-bottom:6px;">商品推荐</div>
+
+                  <!-- 商品卡片 1 -->
+                  <div style="display:flex;gap:8px;align-items:center;background:#FAFAFA;border:1px solid #F1F5F9;border-radius:8px;padding:7px;margin-bottom:5px;cursor:pointer;">
+                    <div style="width:36px;height:36px;border-radius:6px;background:linear-gradient(135deg,#FFF1F2,#FFE4E6);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">🧴</div>
+                    <div style="flex:1;min-width:0;">
+                      <div style="font-size:9px;font-weight:700;color:#1E293B;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">安热沙 UV水凝防晒霜 50ml</div>
+                      <div style="font-size:10px;font-weight:800;color:#E11D48;margin-top:1px;">¥158</div>
+                    </div>
+                    <div style="background:#E11D48;color:white;border-radius:5px;padding:3px 7px;font-size:8px;font-weight:700;flex-shrink:0;cursor:pointer;">购买</div>
+                  </div>
+
+                  <!-- 商品卡片 2 -->
+                  <div style="display:flex;gap:8px;align-items:center;background:#FAFAFA;border:1px solid #F1F5F9;border-radius:8px;padding:7px;cursor:pointer;">
+                    <div style="width:36px;height:36px;border-radius:6px;background:linear-gradient(135deg,#EFF6FF,#DBEAFE);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">🌞</div>
+                    <div style="flex:1;min-width:0;">
+                      <div style="font-size:9px;font-weight:700;color:#1E293B;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">安热沙 防晒喷雾 SPF50+</div>
+                      <div style="font-size:10px;font-weight:800;color:#E11D48;margin-top:1px;">¥128</div>
+                    </div>
+                    <div style="background:#E11D48;color:white;border-radius:5px;padding:3px 7px;font-size:8px;font-weight:700;flex-shrink:0;cursor:pointer;">购买</div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="padding:10px;background:white;margin-top:3px;">
+                <div style="font-size:10px;font-weight:700;color:#1E293B;margin-bottom:8px;">评论 (128)</div>
+                <div style="margin-bottom:8px;">
+                  <div style="display:flex;gap:6px;align-items:flex-start;">
+                    <div style="width:22px;height:22px;border-radius:50%;background:#E2E8F0;flex-shrink:0;"></div>
+                    <div>
+                      <div style="font-size:9px;font-weight:700;color:#1E293B;">travel_lisa</div>
+                      <div style="font-size:10px;color:#475569;margin-top:1px;">求求链接！！这款防晒哪里买的</div>
+                    </div>
+                  </div>
+                </div>
+                <div style="margin-bottom:8px;">
+                  <div style="display:flex;gap:6px;align-items:flex-start;">
+                    <div style="width:22px;height:22px;border-radius:50%;background:#D1FAE5;flex-shrink:0;"></div>
+                    <div>
+                      <div style="font-size:9px;font-weight:700;color:#1E293B;">小兔子跳跳</div>
+                      <div style="font-size:10px;color:#475569;margin-top:1px;">笔记上有链接👆 已经下单啦！</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="screen-label">跳转商品页</div>
+          <div class="screen-label">形式二：笔记挂车</div>
+        </div>
+
+        <!-- Screen 3: 区别对比说明 -->
+        <div>
+          <div class="screen-phone">
+            <div class="screen-inner" style="background:white;">
+              <div class="phone-notch" style="top:0;background:#0F0F0F;"></div>
+              <div style="padding:32px 14px 14px;">
+                <div style="font-size:13px;font-weight:800;color:#1E293B;margin-bottom:4px;">两种形式对比</div>
+                <div style="font-size:9px;color:#94A3B8;margin-bottom:14px;">根据原分享形式自动选择</div>
+
+                <!-- 形式一 -->
+                <div style="background:#FFF8F9;border:1px solid #FFE4E6;border-radius:10px;padding:10px;margin-bottom:8px;">
+                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                    <div style="width:20px;height:20px;background:#E11D48;border-radius:5px;display:flex;align-items:center;justify-content:center;">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" width="12" height="12"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <div style="font-size:10px;font-weight:800;color:#E11D48;">评论区文字链</div>
+                  </div>
+                  <div style="font-size:9px;color:#475569;line-height:1.6;">
+                    触发条件：评论区有人求链接<br>
+                    回复形式：自然口吻 + 商品超链接<br>
+                    体验特点：融入对话，不突兀
+                  </div>
+                  <div style="margin-top:6px;background:white;border-radius:6px;padding:6px;font-size:9px;color:#334155;border:1px solid #F1F5F9;">
+                    「我买的是这款~ 同款链接：<span style="color:#E11D48;text-decoration:underline;">安热沙防晒霜</span> ☀️」
+                  </div>
+                </div>
+
+                <!-- 形式二 -->
+                <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:10px;padding:10px;margin-bottom:8px;">
+                  <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                    <div style="width:20px;height:20px;background:#2563EB;border-radius:5px;display:flex;align-items:center;justify-content:center;">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" width="12" height="12"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                    </div>
+                    <div style="font-size:10px;font-weight:800;color:#2563EB;">笔记挂车</div>
+                  </div>
+                  <div style="font-size:9px;color:#475569;line-height:1.6;">
+                    触发条件：笔记评论区求链接多<br>
+                    回复形式：笔记下方挂商品卡片<br>
+                    体验特点：一次挂车，覆盖所有求链接
+                  </div>
+                  <div style="margin-top:6px;background:white;border-radius:6px;padding:5px;border:1px solid #E2E8F0;display:flex;gap:5px;align-items:center;">
+                    <div style="font-size:12px;">🧴</div>
+                    <div style="font-size:8px;font-weight:700;color:#1E293B;flex:1;">安热沙防晒霜</div>
+                    <div style="font-size:8px;color:#E11D48;font-weight:700;">¥158</div>
+                  </div>
+                </div>
+
+                <!-- 判断逻辑 -->
+                <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:10px;padding:10px;">
+                  <div style="font-size:10px;font-weight:800;color:#10B981;margin-bottom:4px;">AI 自动判断逻辑</div>
+                  <div style="font-size:9px;color:#065F46;line-height:1.7;">
+                    原分享是<b>评论</b> → 文字链回复<br>
+                    原分享是<b>笔记</b> + 求链接 &gt;3 条 → 笔记挂车<br>
+                    博主也可手动切换偏好形式
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="screen-label">两种形式对比 & 判断逻辑</div>
         </div>
 
       </div>
